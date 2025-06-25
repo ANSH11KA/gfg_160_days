@@ -1,0 +1,17 @@
+class Solution {
+  public:
+    int getSecondLargest(vector<int> &arr) {
+        // code here
+        int F = -1, S=-1; 
+        for(int num: arr){
+            if(num>F){
+                S=F;
+                F=num;
+            }
+            else if(num<F && num> S){
+                S = num;
+            }
+        }
+        return S;
+    }
+};
